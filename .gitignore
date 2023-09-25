@@ -1,2 +1,10 @@
 node_modules
 .DS_Store
+
+.env
+
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+uploads
