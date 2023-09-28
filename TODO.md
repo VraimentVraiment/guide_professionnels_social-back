@@ -1,3 +1,3 @@
-- Add translations to migration
+- add permissions to migration
+- Add translations to migration ?
 - Add mock data to migration
-- add authorizations to migration
