@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "directus start",
-    "migrate": "directus database migrate:latest && npm run snapshot:apply",
+    "migrate": "directus database migrate:latest",
     "bootstrap": "directus bootstrap && npm run snapshot:apply",
     "snapshot:create": "directus schema snapshot ./snapshots/\"$(date \"+%F\")\"-snapshot-\"$(date \"+%s\")\".yaml",
     "snapshot:apply": "directus schema apply --yes ./snapshots/\"$(ls -t ./snapshots | head -1)\"",
@@ -16,6 +16,6 @@
     "snapshots:clear": "rm -rf ./snapshots/*"
   },
   "dependencies": {
-    "directus": "^10.6.4"
+    "directus": "^10.7.2"
   }
 }
