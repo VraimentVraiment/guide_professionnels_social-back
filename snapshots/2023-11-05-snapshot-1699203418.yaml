@@ -1,5 +1,5 @@
 version: 1
-directus: 14.0.0
+directus: 14.0.2
 vendor: mysql
 collections:
   - collection: gps_caracteristiquesdispositif
@@ -317,7 +317,7 @@ collections:
       collapse: open
       collection: gps_pages
       color: null
-      display_template: null
+      display_template: '{{title}}'
       group: site
       hidden: false
       icon: post_add
@@ -345,7 +345,7 @@ collections:
       collapse: open
       collection: gps_pages_groups
       color: null
-      display_template: '{{gps_pages.title}}'
+      display_template: '{{name}}'
       group: site
       hidden: false
       icon: file_copy
@@ -401,7 +401,8 @@ collections:
       collapse: open
       collection: gps_site_main_navigation_menu
       color: null
-      display_template: null
+      display_template: >-
+        {{navigation_menu.item:gps_pages.title}}{{navigation_menu.item:gps_pages_groups.name}}
       group: site
       hidden: false
       icon: menu
@@ -420,14 +421,14 @@ collections:
       versioning: false
     schema:
       name: gps_site_main_navigation_menu
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: null
       archive_value: null
       collapse: open
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       color: null
       display_template: null
       group: null
@@ -437,17 +438,13 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 12
+      sort: null
       sort_field: null
-      translations:
-        - language: fr-FR
-          translation: Menu de navigation principale
-          singular: Item de menu de navigation principale
-          plural: Items de menu de navigation principal
+      translations: null
       unarchive_value: null
       versioning: false
     schema:
-      name: gps_site_navigation_menu
+      name: gps_site_main_navigation_menu_navigation_menu
   - collection: gps_thematiques
     meta:
       accountability: all
@@ -631,6 +628,44 @@ fields:
       has_auto_increment: false
       foreign_key_table: gps_fichesdispositif
       foreign_key_column: id
+  - collection: directus_users
+    field: structure
+    type: string
+    meta:
+      collection: directus_users
+      conditions: null
+      display: null
+      display_options: null
+      field: structure
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: structure
+      table: directus_users
+      data_type: varchar
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
   - collection: gps_caracteristiquesdispositif
     field: children
     type: alias
@@ -1614,8 +1649,8 @@ fields:
       is_generated: false
       generation_expression: null
       has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
+      foreign_key_table: gps_typesdispositif
+      foreign_key_column: id
   - collection: gps_fichesdispositif
     field: id
     type: integer
@@ -2104,8 +2139,8 @@ fields:
       is_generated: false
       generation_expression: null
       has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
+      foreign_key_table: gps_caracteristiquesdispositif
+      foreign_key_column: id
   - collection: gps_fichesdispositif_gps_caracteristiquesdispositif
     field: gps_fichesdispositif_id
     type: integer
@@ -2143,8 +2178,8 @@ fields:
       is_generated: false
       generation_expression: null
       has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
+      foreign_key_table: gps_fichesdispositif
+      foreign_key_column: id
   - collection: gps_fichesdispositif_gps_caracteristiquesdispositif
     field: id
     type: integer
@@ -2768,7 +2803,7 @@ fields:
     schema:
       name: directus_files_id
       table: gps_fichestechniques_directus_files
-      data_type: char
+      data_type: varchar
       default_value: null
       max_length: 36
       numeric_precision: null
@@ -4001,8 +4036,8 @@ fields:
       special:
         - m2a
       interface: list-m2a
-      options: {}
-      display: raw
+      options: null
+      display: related-values
       display_options:
         template: '{{item:gps_pages}}{{item:gps_pages_groups}}'
       readonly: false
@@ -4011,18 +4046,18 @@ fields:
       width: full
       translations:
         - language: fr-FR
-          translation: Menu de navigation principal
+          translation: Menu de navigation
       note: null
       conditions: null
       required: false
       group: null
       validation: null
       validation_message: null
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: collection
     type: string
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -4042,7 +4077,7 @@ fields:
       width: full
     schema:
       name: collection
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: varchar
       default_value: null
       max_length: 255
@@ -4056,11 +4091,11 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: gps_site_main_navigation_menu_id
     type: integer
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -4080,7 +4115,7 @@ fields:
       width: full
     schema:
       name: gps_site_main_navigation_menu_id
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: int unsigned
       default_value: null
       max_length: null
@@ -4094,11 +4129,11 @@ fields:
       has_auto_increment: false
       foreign_key_table: gps_site_main_navigation_menu
       foreign_key_column: id
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: id
     type: integer
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -4118,7 +4153,7 @@ fields:
       width: full
     schema:
       name: id
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: int unsigned
       default_value: null
       max_length: null
@@ -4132,11 +4167,11 @@ fields:
       has_auto_increment: true
       foreign_key_table: null
       foreign_key_column: null
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: item
     type: string
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -4156,7 +4191,7 @@ fields:
       width: full
     schema:
       name: item
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: varchar
       default_value: null
       max_length: 255
@@ -4170,11 +4205,11 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: sort
     type: integer
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -4194,7 +4229,7 @@ fields:
       width: full
     schema:
       name: sort
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: int
       default_value: null
       max_length: null
@@ -4865,7 +4900,7 @@ relations:
       column: file
       foreign_key_table: directus_files
       foreign_key_column: id
-      constraint_name: download_file_file_foreign
+      constraint_name: gps_download_files_file_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichesdispositif
@@ -4881,6 +4916,14 @@ relations:
       one_deselect_action: nullify
       one_field: null
       sort_field: null
+    schema:
+      table: gps_fichesdispositif
+      column: gps_typesdispositif_id
+      foreign_key_table: gps_typesdispositif
+      foreign_key_column: id
+      constraint_name: gps_fichesdispositif_gps_typesdispositif_id_foreign
+      on_update: RESTRICT
+      on_delete: RESTRICT
   - collection: gps_fichesdispositif_directus_files
     field: directus_files_id
     related_collection: directus_files
@@ -4899,7 +4942,7 @@ relations:
       column: directus_files_id
       foreign_key_table: directus_files
       foreign_key_column: id
-      constraint_name: fichesdispositif_files_1_directus_files_id_foreign
+      constraint_name: gps_fichesdispositif_directus_files_direct__50e50aea_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichesdispositif_directus_files
@@ -4920,7 +4963,7 @@ relations:
       column: gps_fichesdispositif_id
       foreign_key_table: gps_fichesdispositif
       foreign_key_column: id
-      constraint_name: fichesdispositif_files_1_fiche_dispositif_id_foreign
+      constraint_name: gps_fichesdispositif_directus_files_gps_fi__76a70544_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichesdispositif_gps_caracteristiquesdispositif
@@ -4936,6 +4979,14 @@ relations:
       one_deselect_action: nullify
       one_field: null
       sort_field: null
+    schema:
+      table: gps_fichesdispositif_gps_caracteristiquesdispositif
+      column: gps_caracteristiquesdispositif_id
+      foreign_key_table: gps_caracteristiquesdispositif
+      foreign_key_column: id
+      constraint_name: gps_fichesdispositif_gps_caracteristiquesd__69a23116_foreign
+      on_update: RESTRICT
+      on_delete: RESTRICT
   - collection: gps_fichesdispositif_gps_caracteristiquesdispositif
     field: gps_fichesdispositif_id
     related_collection: gps_fichesdispositif
@@ -4949,6 +5000,14 @@ relations:
       one_deselect_action: nullify
       one_field: caracteristiques_dispositif
       sort_field: null
+    schema:
+      table: gps_fichesdispositif_gps_caracteristiquesdispositif
+      column: gps_fichesdispositif_id
+      foreign_key_table: gps_fichesdispositif
+      foreign_key_column: id
+      constraint_name: gps_fichesdispositif_gps_caracteristiquesd__158d015c_foreign
+      on_update: RESTRICT
+      on_delete: RESTRICT
   - collection: gps_fichesdispositif_gps_download_files
     field: gps_download_files_id
     related_collection: gps_download_files
@@ -4967,7 +5026,7 @@ relations:
       column: gps_download_files_id
       foreign_key_table: gps_download_files
       foreign_key_column: id
-      constraint_name: gps_fichesdispositif_gps_download_files_g__783b388a_foreign
+      constraint_name: gps_fichesdispositif_gps_download_files_gp__415eded6_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichesdispositif_gps_download_files
@@ -4988,7 +5047,7 @@ relations:
       column: gps_fichesdispositif_id
       foreign_key_table: gps_fichesdispositif
       foreign_key_column: id
-      constraint_name: gps_fichesdispositif_gps_download_files_g__4f0c654a_foreign
+      constraint_name: gps_fichesdispositif_gps_download_files_gp__336b7372_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichesdispositif_gps_thematiques
@@ -5009,7 +5068,7 @@ relations:
       column: gps_fichesdispositif_id
       foreign_key_table: gps_fichesdispositif
       foreign_key_column: id
-      constraint_name: fichesdispositif_thematiques_fiche_dispositif_id_foreign
+      constraint_name: gps_fichesdispositif_gps_thematiques_gps_f__21002b18_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichesdispositif_gps_thematiques
@@ -5030,7 +5089,7 @@ relations:
       column: gps_thematiques_id
       foreign_key_table: gps_thematiques
       foreign_key_column: id
-      constraint_name: fichesdispositif_thematiques_thematique_id_foreign
+      constraint_name: gps_fichesdispositif_gps_thematiques_gps_th__f88815a_foreign
       on_update: RESTRICT
       on_delete: NO ACTION
   - collection: gps_fichestechniques
@@ -5051,7 +5110,7 @@ relations:
       column: media
       foreign_key_table: directus_files
       foreign_key_column: id
-      constraint_name: fichestechniques_media_foreign
+      constraint_name: gps_fichestechniques_media_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichestechniques_gps_thematiques
@@ -5072,7 +5131,7 @@ relations:
       column: gps_fichestechniques_id
       foreign_key_table: gps_fichestechniques
       foreign_key_column: id
-      constraint_name: gps_fichestechniques_gps_thematiques_gps___1747ef78_foreign
+      constraint_name: gps_fichestechniques_gps_thematiques_gps_f__66e1b7c8_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_fichestechniques_gps_thematiques
@@ -5093,7 +5152,7 @@ relations:
       column: gps_thematiques_id
       foreign_key_table: gps_thematiques
       foreign_key_column: id
-      constraint_name: gps_fichestechniques_gps_thematiques_gps___7a18a168_foreign
+      constraint_name: gps_fichestechniques_gps_thematiques_gps_t__19ebbd0f_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_pages
@@ -5159,12 +5218,12 @@ relations:
       constraint_name: gps_site_footer_operator_img_src_dark_foreign
       on_update: RESTRICT
       on_delete: SET NULL
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: gps_site_main_navigation_menu_id
     related_collection: gps_site_main_navigation_menu
     meta:
       junction_field: item
-      many_collection: gps_site_navigation_menu
+      many_collection: gps_site_main_navigation_menu_navigation_menu
       many_field: gps_site_main_navigation_menu_id
       one_allowed_collections: null
       one_collection: gps_site_main_navigation_menu
@@ -5173,19 +5232,19 @@ relations:
       one_field: navigation_menu
       sort_field: sort
     schema:
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       column: gps_site_main_navigation_menu_id
       foreign_key_table: gps_site_main_navigation_menu
       foreign_key_column: id
-      constraint_name: gps_site_navigation_menu_gps_site_main_nav__6ffdf6c0_foreign
+      constraint_name: gps_site_main_navigation_menu_navigation_me__bd4d76b_foreign
       on_update: RESTRICT
       on_delete: SET NULL
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: item
     related_collection: null
     meta:
       junction_field: gps_site_main_navigation_menu_id
-      many_collection: gps_site_navigation_menu
+      many_collection: gps_site_main_navigation_menu_navigation_menu
       many_field: item
       one_allowed_collections:
         - gps_pages
@@ -5276,7 +5335,7 @@ relations:
       column: gps_thematiques_id
       foreign_key_table: gps_thematiques
       foreign_key_column: id
-      constraint_name: gps_typesdispositif_gps_thematiques_gps___7cfe677b_foreign
+      constraint_name: gps_typesdispositif_gps_thematiques_gps_th__1deae013_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_typesdispositif_gps_thematiques
@@ -5297,6 +5356,6 @@ relations:
       column: gps_typesdispositif_id
       foreign_key_table: gps_typesdispositif
       foreign_key_column: id
-      constraint_name: gps_typesdispositif_gps_thematiques_gps___7136cc60_foreign
+      constraint_name: gps_typesdispositif_gps_thematiques_gps_ty__5ff59cee_foreign
       on_update: RESTRICT
       on_delete: SET NULL

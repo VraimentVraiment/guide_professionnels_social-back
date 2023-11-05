@@ -1,0 +1,28 @@
+[
+  {
+    "type": "header",
+    "version": "5.2.0",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+  },
+  {
+    "type": "database",
+    "name": "ddets14"
+  },
+  {
+    "type": "table",
+    "name": "directus_folders",
+    "database": "ddets14",
+    "data": [
+      {
+        "id": "3b124a2c-6fa7-4772-972c-1191ab996137",
+        "name": "pictogrammes",
+        "parent": null
+      },
+      {
+        "id": "7e7a5dfa-cbd3-4009-ab87-af0e8494997a",
+        "name": "public",
+        "parent": null
+      }
+    ]
+  }
+]
