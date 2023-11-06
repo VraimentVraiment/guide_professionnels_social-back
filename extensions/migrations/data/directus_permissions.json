@@ -1,3 +1,4 @@
+
 [
 {"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
 {"type":"database","name":"ddets14"},
@@ -170,7 +171,12 @@
 {"id":"336","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_site_header","action":"read","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
 {"id":"337","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_site_header","action":"update","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
 {"id":"338","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_site_header","action":"delete","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
-{"id":"339","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_site_header","action":"share","permissions":"{}","validation":"{}","presets":null,"fields":"*"}
+{"id":"339","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_site_header","action":"share","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
+{"id":"340","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_map","action":"create","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
+{"id":"341","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_map","action":"read","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
+{"id":"342","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_map","action":"update","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
+{"id":"343","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_map","action":"delete","permissions":"{}","validation":"{}","presets":null,"fields":"*"},
+{"id":"344","role":"bf383d1c-33e1-4b93-bf10-d5d179489b0c","collection":"gps_map","action":"share","permissions":"{}","validation":"{}","presets":null,"fields":"*"}
 ]
 }
 ]

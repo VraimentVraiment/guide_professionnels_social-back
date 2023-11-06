@@ -1,6 +1,7 @@
 # TODO
 
-- Update readme
+- Update readme :
+  - set map center setting in directus api fields
 
 ## Backend interface
 
