@@ -3118,7 +3118,7 @@ fields:
       special: null
       translations:
         - language: fr-FR
-          translation: Cente de la carte
+          translation: Centre de la carte
       validation: null
       validation_message: null
       width: full
