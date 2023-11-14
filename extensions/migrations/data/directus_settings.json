@@ -1,0 +1,46 @@
+[
+  {
+    "type": "header",
+    "version": "5.2.0",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+  },
+  {
+    "type": "database",
+    "name": "ddets14"
+  },
+  {
+    "type": "table",
+    "name": "directus_settings",
+    "database": "ddets14",
+    "data": [
+      {
+        "id": "1",
+        "project_name": "GPS-Administration",
+        "project_url": null,
+        "project_color": "#FFFFFF",
+        "project_logo": "8bc3bcf6-3a64-4c48-a53c-42a2aa8247bf",
+        "public_foreground": "8bc3bcf6-3a64-4c48-a53c-42a2aa8247bf",
+        "public_background": null,
+        "public_note": "Interface d'administration pour le Guide des Professionnels du Social",
+        "auth_login_attempts": "25",
+        "auth_password_policy": "\/^.{8,}$\/",
+        "storage_asset_transform": "all",
+        "storage_asset_presets": null,
+        "custom_css": "",
+        "storage_default_folder": null,
+        "basemaps": null,
+        "mapbox_key": null,
+        "module_bar": "[{\"type\":\"module\",\"id\":\"content\",\"enabled\":true},{\"type\":\"module\",\"id\":\"users\",\"enabled\":true},{\"type\":\"module\",\"id\":\"files\",\"enabled\":true},{\"type\":\"module\",\"id\":\"insights\",\"enabled\":false},{\"type\":\"module\",\"id\":\"settings\",\"enabled\":true,\"locked\":true}]",
+        "project_descriptor": "Interface d'administration du Guide des Professionnels du Social",
+        "default_language": "fr-FR",
+        "custom_aspect_ratios": null,
+        "public_favicon": null,
+        "default_appearance": "auto",
+        "default_theme_light": null,
+        "theme_light_overrides": "{\"primary\":\"#000091\",\"foreground\":\"#2F2F2F\",\"foregroundAccent\":\"#545454\",\"foregroundSubdued\":\"#696969\",\"secondary\":\"#C9191E\",\"fontFamilySansSerif\":\"\\\"Marianne\\\", \\\"Inter\\\", sans-serif\"}",
+        "default_theme_dark": null,
+        "theme_dark_overrides": "{\"foreground\":\"#fff\",\"foregroundAccent\":\"#C6C6FB\",\"foregroundSubdued\":\"#CECECE\",\"background\":\"#161616\",\"primary\":\"#8585f6\",\"fontFamilySansSerif\":\"\\\"Marianne\\\", \\\"Inter\\\", sans-serif\",\"secondary\":\"#C9191E\"}"
+      }
+    ]
+  }
+]

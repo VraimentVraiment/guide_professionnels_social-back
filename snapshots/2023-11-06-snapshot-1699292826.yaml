@@ -1,5 +1,5 @@
 version: 1
-directus: 13.0.0
+directus: 14.0.2
 vendor: mysql
 collections:
   - collection: gps_caracteristiquesdispositif
@@ -27,6 +27,7 @@ collections:
           singular: caractéristique de dispositif
           plural: caractéristiques de dispositif
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_caracteristiquesdispositif
   - collection: gps_caracteristiquesdispositif_gps_thematiques
@@ -54,6 +55,7 @@ collections:
           singular: Relation caractéristique dispositif / thématique
           plural: Relations caractéristiques dispositif / thématiques
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_caracteristiquesdispositif_gps_thematiques
   - collection: gps_download_files
@@ -73,7 +75,7 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: null
+      sort: 12
       sort_field: null
       translations:
         - language: fr-FR
@@ -81,6 +83,7 @@ collections:
           singular: Fichier à télécharger
           plural: Fichiers à télécharger
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_download_files
   - collection: gps_fichesdispositif
@@ -108,6 +111,7 @@ collections:
           singular: fiche dispositif
           plural: fiches dispositif
       unarchive_value: draft
+      versioning: false
     schema:
       name: gps_fichesdispositif
   - collection: gps_fichesdispositif_directus_files
@@ -135,6 +139,7 @@ collections:
           singular: Relations fiche dispositif / fichier
           plural: Relations fiches dispositif / fichiers
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_fichesdispositif_directus_files
   - collection: gps_fichesdispositif_gps_caracteristiquesdispositif
@@ -164,6 +169,7 @@ collections:
           singular: Relation fiche dispositif / caractéristique
           plural: Relations fiches dispositif / caractéristiques
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_fichesdispositif_gps_caracteristiquesdispositif
   - collection: gps_fichesdispositif_gps_download_files
@@ -183,10 +189,11 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: null
+      sort: 13
       sort_field: null
       translations: null
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_fichesdispositif_gps_download_files
   - collection: gps_fichesdispositif_gps_thematiques
@@ -214,6 +221,7 @@ collections:
           singular: Relation fiche technique / thématique
           plural: Relations fiches techniques / thématiques
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_fichesdispositif_gps_thematiques
   - collection: gps_fichestechniques
@@ -241,6 +249,7 @@ collections:
           singular: fiches technique
           plural: fiches techniques
       unarchive_value: draft
+      versioning: false
     schema:
       name: gps_fichestechniques
   - collection: gps_fichestechniques_directus_files
@@ -268,6 +277,7 @@ collections:
           singular: Relation fiche technique / fichier
           plural: Relations fiches techniques / fichier
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_fichestechniques_directus_files
   - collection: gps_fichestechniques_gps_thematiques
@@ -295,8 +305,37 @@ collections:
           singular: Relation fiche technique / thématique
           plural: Relations fiches techniques / thématiques
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_fichestechniques_gps_thematiques
+  - collection: gps_map
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: gps_map
+      color: null
+      display_template: null
+      group: site
+      hidden: false
+      icon: map
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: true
+      sort: 7
+      sort_field: null
+      translations:
+        - language: fr-FR
+          translation: Paramètres de carte
+          singular: Paramètres de carte
+          plural: Paramètres de carte
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: gps_map
   - collection: gps_pages
     meta:
       accountability: all
@@ -306,8 +345,8 @@ collections:
       collapse: open
       collection: gps_pages
       color: null
-      display_template: null
-      group: gps_site
+      display_template: '{{title}}'
+      group: site
       hidden: false
       icon: post_add
       item_duplication_fields: null
@@ -322,6 +361,7 @@ collections:
           singular: Page
           plural: Pages
       unarchive_value: draft
+      versioning: false
     schema:
       name: gps_pages
   - collection: gps_pages_groups
@@ -333,8 +373,8 @@ collections:
       collapse: open
       collection: gps_pages_groups
       color: null
-      display_template: '{{gps_pages.title}}'
-      group: gps_site
+      display_template: '{{name}}'
+      group: site
       hidden: false
       icon: file_copy
       item_duplication_fields: null
@@ -349,43 +389,130 @@ collections:
           singular: Groupe de pages
           plural: Groupes de pages
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_pages_groups
-  - collection: gps_site
+  - collection: gps_site_banner
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: null
       archive_value: null
       collapse: open
-      collection: gps_site
+      collection: gps_site_banner
       color: null
       display_template: null
-      group: null
+      group: site
       hidden: false
-      icon: laptop_mac
+      icon: remove_from_queue
       item_duplication_fields: null
       note: null
       preview_url: null
       singleton: true
-      sort: 1
+      sort: 5
       sort_field: null
       translations:
         - language: fr-FR
-          translation: Site
-          singular: Site
-          plural: Sites
+          translation: Bannière du site
+          singular: Bannière du site
+          plural: Bannières du site
       unarchive_value: null
+      versioning: false
     schema:
-      name: gps_site
-  - collection: gps_site_navigation_menu
+      name: gps_site_banner
+  - collection: gps_site_footer
     meta:
       accountability: all
       archive_app_filter: true
       archive_field: null
       archive_value: null
       collapse: open
-      collection: gps_site_navigation_menu
+      collection: gps_site_footer
+      color: null
+      display_template: null
+      group: site
+      hidden: false
+      icon: barefoot
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: true
+      sort: 6
+      sort_field: null
+      translations:
+        - language: fr-FR
+          translation: Pied de page
+          singular: Pied de page
+          plural: Pied de page
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: gps_site_footer
+  - collection: gps_site_header
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: gps_site_header
+      color: null
+      display_template: null
+      group: site
+      hidden: false
+      icon: position_top_right
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: true
+      sort: 3
+      sort_field: null
+      translations:
+        - language: fr-FR
+          translation: En-tête du site
+          singular: En-tête du site
+          plural: En-tête du site
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: gps_site_header
+  - collection: gps_site_main_navigation_menu
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: gps_site_main_navigation_menu
+      color: null
+      display_template: >-
+        {{navigation_menu.item:gps_pages.title}}{{navigation_menu.item:gps_pages_groups.name}}
+      group: site
+      hidden: false
+      icon: menu
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: true
+      sort: 4
+      sort_field: null
+      translations:
+        - language: fr-FR
+          translation: Menu de navigation principal
+          singular: Menu de navigation principal
+          plural: Menus de navigation principaux
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: gps_site_main_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: gps_site_main_navigation_menu_navigation_menu
       color: null
       display_template: null
       group: null
@@ -395,16 +522,13 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 12
+      sort: 14
       sort_field: null
-      translations:
-        - language: fr-FR
-          translation: Menu de navigation principale
-          singular: Item de menu de navigation principale
-          plural: Items de menu de navigation principal
+      translations: null
       unarchive_value: null
+      versioning: false
     schema:
-      name: gps_site_navigation_menu
+      name: gps_site_main_navigation_menu_navigation_menu
   - collection: gps_thematiques
     meta:
       accountability: all
@@ -430,6 +554,7 @@ collections:
           singular: thématique
           plural: thématiques
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_thematiques
   - collection: gps_typesdispositif
@@ -457,6 +582,7 @@ collections:
           singular: type de dispositif
           plural: types de dispositif
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_typesdispositif
   - collection: gps_typesdispositif_gps_thematiques
@@ -484,8 +610,31 @@ collections:
           singular: Relation type dispositif / thématique
           plural: Relations types dispositif / thématiques
       unarchive_value: null
+      versioning: false
     schema:
       name: gps_typesdispositif_gps_thematiques
+  - collection: site
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: site
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: laptop_mac
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: 1
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
 fields:
   - collection: directus_files
     field: file_id
@@ -563,6 +712,44 @@ fields:
       has_auto_increment: false
       foreign_key_table: gps_fichesdispositif
       foreign_key_column: id
+  - collection: directus_users
+    field: structure
+    type: string
+    meta:
+      collection: directus_users
+      conditions: null
+      display: null
+      display_options: null
+      field: structure
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: structure
+      table: directus_users
+      data_type: varchar
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
   - collection: gps_caracteristiquesdispositif
     field: children
     type: alias
@@ -1535,7 +1722,7 @@ fields:
     schema:
       name: gps_typesdispositif_id
       table: gps_fichesdispositif
-      data_type: int unsigned
+      data_type: int
       default_value: null
       max_length: null
       numeric_precision: 10
@@ -2025,7 +2212,7 @@ fields:
     schema:
       name: gps_caracteristiquesdispositif_id
       table: gps_fichesdispositif_gps_caracteristiquesdispositif
-      data_type: int unsigned
+      data_type: int
       default_value: null
       max_length: null
       numeric_precision: 10
@@ -2064,7 +2251,7 @@ fields:
     schema:
       name: gps_fichesdispositif_id
       table: gps_fichesdispositif_gps_caracteristiquesdispositif
-      data_type: int unsigned
+      data_type: int
       default_value: null
       max_length: null
       numeric_precision: 10
@@ -2700,7 +2887,7 @@ fields:
     schema:
       name: directus_files_id
       table: gps_fichestechniques_directus_files
-      data_type: char
+      data_type: varchar
       default_value: null
       max_length: 36
       numeric_precision: null
@@ -2901,6 +3088,137 @@ fields:
       is_generated: false
       generation_expression: null
       has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_map
+    field: center
+    type: geometry.Point
+    meta:
+      collection: gps_map
+      conditions: null
+      display: raw
+      display_options: null
+      field: center
+      group: null
+      hidden: false
+      interface: map
+      note: null
+      options:
+        defaultView:
+          bearing: 0
+          center:
+            lat: 47.05786916979133
+            lng: 2.572211191467659
+          pitch: 0
+          zoom: 4.3242474295336795
+        geometryType: Point
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Centre de la carte
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: center
+      table: gps_map
+      data_type: point
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_map
+    field: id
+    type: integer
+    meta:
+      collection: gps_map
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: gps_map
+      data_type: int unsigned
+      default_value: null
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_map
+    field: zoom_level
+    type: float
+    meta:
+      collection: gps_map
+      conditions: null
+      display: null
+      display_options: null
+      field: zoom_level
+      group: null
+      hidden: false
+      interface: slider
+      note: null
+      options:
+        max: 12
+        maxValue: 12
+        min: 4
+        minValue: 6
+        stepInterval: 0.5
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Niveau de zoom par défaut
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: zoom_level
+      table: gps_map
+      data_type: float
+      default_value: 8
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 5
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
   - collection: gps_pages
@@ -3404,36 +3722,11 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: gps_site
-    field: accordion-97dfhw
-    type: alias
-    meta:
-      collection: gps_site
-      field: accordion-97dfhw
-      special:
-        - alias
-        - no-data
-        - group
-      interface: group-accordion
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 2
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-      validation: null
-      validation_message: null
-  - collection: gps_site
+  - collection: gps_site_banner
     field: id
     type: integer
     meta:
-      collection: gps_site
+      collection: gps_site_banner
       conditions: null
       display: null
       display_options: null
@@ -3453,7 +3746,7 @@ fields:
       width: full
     schema:
       name: id
-      table: gps_site
+      table: gps_site_banner
       data_type: int unsigned
       default_value: null
       max_length: null
@@ -3467,37 +3760,880 @@ fields:
       has_auto_increment: true
       foreign_key_table: null
       foreign_key_column: null
-  - collection: gps_site
+  - collection: gps_site_banner
+    field: service_description
+    type: string
+    meta:
+      collection: gps_site_banner
+      conditions: null
+      display: null
+      display_options: null
+      field: service_description
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Description du service
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: service_description
+      table: gps_site_banner
+      data_type: varchar
+      default_value: dans <la collectivité>
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_banner
+    field: service_title
+    type: text
+    meta:
+      collection: gps_site_banner
+      conditions: null
+      display: null
+      display_options: null
+      field: service_title
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 2
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Titre du service
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: service_title
+      table: gps_site_banner
+      data_type: text
+      default_value: null
+      max_length: 65535
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_banner
+    field: site_logo
+    type: uuid
+    meta:
+      collection: gps_site_banner
+      conditions: null
+      display: null
+      display_options: null
+      field: site_logo
+      group: null
+      hidden: false
+      interface: file
+      note: null
+      options:
+        folder: 7e7a5dfa-cbd3-4009-ab87-af0e8494997a
+      readonly: false
+      required: true
+      sort: 4
+      special:
+        - file
+      translations:
+        - language: fr-FR
+          translation: Logo du service
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: site_logo
+      table: gps_site_banner
+      data_type: char
+      default_value: 8bc3bcf6-3a64-4c48-a53c-42a2aa8247bf
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: gps_site_banner
+    field: site_logo_dark
+    type: uuid
+    meta:
+      collection: gps_site_banner
+      conditions: null
+      display: null
+      display_options: null
+      field: site_logo_dark
+      group: null
+      hidden: false
+      interface: file
+      note: null
+      options:
+        folder: 7e7a5dfa-cbd3-4009-ab87-af0e8494997a
+      readonly: false
+      required: false
+      sort: 5
+      special:
+        - file
+      translations:
+        - language: fr-FR
+          translation: Titre du service (mode sombre)
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: site_logo_dark
+      table: gps_site_banner
+      data_type: char
+      default_value: 2326bc2d-02fc-4cd5-bae5-73e60b314601
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: gps_site_footer
+    field: a11y_compliance
+    type: string
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: a11y_compliance
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 5
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Conformité d'accessibilité
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: a11y_compliance
+      table: gps_site_footer
+      data_type: varchar
+      default_value: Partiellement conforme
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: desc_text
+    type: text
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: desc_text
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 7
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Texte de description
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: desc_text
+      table: gps_site_footer
+      data_type: text
+      default_value: null
+      max_length: 65535
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: id
+    type: integer
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: gps_site_footer
+      data_type: int unsigned
+      default_value: null
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: licence_name
+    type: string
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: licence_name
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 4
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Nom de la license
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: licence_name
+      table: gps_site_footer
+      data_type: varchar
+      default_value: etalab-2.0
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: licence_text
+    type: string
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: licence_text
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 2
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Texte avant la license
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: licence_text
+      table: gps_site_footer
+      data_type: varchar
+      default_value: Sauf mention contraire, tous les contenus de ce site sont sous licence
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: licence_to
+    type: string
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: licence_to
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 3
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Lien vers la license
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: licence_to
+      table: gps_site_footer
+      data_type: varchar
+      default_value: https://github.com/etalab/licence-ouverte/blob/master/LO.md
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: logo_text
+    type: text
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: logo_text
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 6
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Texte du logo
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: logo_text
+      table: gps_site_footer
+      data_type: text
+      default_value: null
+      max_length: 65535
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: operator_img_alt
+    type: string
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: operator_img_alt
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Texte alternatif de l'image de l'opérateur
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: operator_img_alt
+      table: gps_site_footer
+      data_type: varchar
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: operator_img_src
+    type: uuid
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: operator_img_src
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options:
+        folder: 7e7a5dfa-cbd3-4009-ab87-af0e8494997a
+      readonly: false
+      required: false
+      sort: 8
+      special:
+        - file
+      translations:
+        - language: fr-FR
+          translation: Logo opérateur supplémentaire
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: operator_img_src
+      table: gps_site_footer
+      data_type: char
+      default_value: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: gps_site_footer
+    field: operator_img_src_dark
+    type: uuid
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: operator_img_src_dark
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options:
+        folder: 7e7a5dfa-cbd3-4009-ab87-af0e8494997a
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - file
+      translations:
+        - language: fr-FR
+          translation: Logo opérateur supplémentaire (mode sombre)
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: operator_img_src_dark
+      table: gps_site_footer
+      data_type: char
+      default_value: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: gps_site_footer
+    field: operator_link_text
+    type: string
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: operator_link_text
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Texte du lien vers l'opérateur
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: operator_link_text
+      table: gps_site_footer
+      data_type: varchar
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_footer
+    field: operator_to
+    type: string
+    meta:
+      collection: gps_site_footer
+      conditions: null
+      display: null
+      display_options: null
+      field: operator_to
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 11
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Lien vers l'opérateur
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: operator_to
+      table: gps_site_footer
+      data_type: varchar
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_header
+    field: id
+    type: integer
+    meta:
+      collection: gps_site_header
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: gps_site_header
+      data_type: int unsigned
+      default_value: null
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_header
+    field: logo_text
+    type: text
+    meta:
+      collection: gps_site_header
+      conditions: null
+      display: null
+      display_options: null
+      field: logo_text
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: null
+      options: null
+      readonly: false
+      required: true
+      sort: 4
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Texte du logo
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: logo_text
+      table: gps_site_header
+      data_type: text
+      default_value: null
+      max_length: 65535
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_header
+    field: service_description
+    type: string
+    meta:
+      collection: gps_site_header
+      conditions: null
+      display: null
+      display_options: null
+      field: service_description
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Description du service
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: service_description
+      table: gps_site_header
+      data_type: varchar
+      default_value: dans <la collectivité>
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_header
+    field: service_title
+    type: string
+    meta:
+      collection: gps_site_header
+      conditions: null
+      display: null
+      display_options: null
+      field: service_title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options:
+        placeholder: null
+      readonly: false
+      required: true
+      sort: 2
+      special: null
+      translations:
+        - language: fr-FR
+          translation: Titre du service
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: service_title
+      table: gps_site_header
+      data_type: varchar
+      default_value: Guide des professionnels du social
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_main_navigation_menu
+    field: id
+    type: integer
+    meta:
+      collection: gps_site_main_navigation_menu
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: gps_site_main_navigation_menu
+      data_type: int unsigned
+      default_value: null
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: gps_site_main_navigation_menu
     field: navigation_menu
     type: alias
     meta:
-      collection: gps_site
+      collection: gps_site_main_navigation_menu
       field: navigation_menu
       special:
         - m2a
       interface: list-m2a
-      options: {}
+      options: null
       display: related-values
       display_options:
-        template: '{{item:gps_pages.title}}{{item:gps_pages_groups.name}}'
+        template: '{{item:gps_pages}}{{item:gps_pages_groups}}'
       readonly: false
       hidden: false
-      sort: 1
+      sort: 2
       width: full
       translations:
         - language: fr-FR
-          translation: Menu de navigation principal
+          translation: Menu de navigation
       note: null
       conditions: null
       required: false
-      group: accordion-97dfhw
+      group: null
       validation: null
       validation_message: null
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: collection
     type: string
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -3517,7 +4653,7 @@ fields:
       width: full
     schema:
       name: collection
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: varchar
       default_value: null
       max_length: 255
@@ -3531,15 +4667,15 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: gps_site_navigation_menu
-    field: gps_site_id
+  - collection: gps_site_main_navigation_menu_navigation_menu
+    field: gps_site_main_navigation_menu_id
     type: integer
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
-      field: gps_site_id
+      field: gps_site_main_navigation_menu_id
       group: null
       hidden: true
       interface: null
@@ -3554,8 +4690,8 @@ fields:
       validation_message: null
       width: full
     schema:
-      name: gps_site_id
-      table: gps_site_navigation_menu
+      name: gps_site_main_navigation_menu_id
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: int unsigned
       default_value: null
       max_length: null
@@ -3567,13 +4703,13 @@ fields:
       is_generated: false
       generation_expression: null
       has_auto_increment: false
-      foreign_key_table: gps_site
+      foreign_key_table: gps_site_main_navigation_menu
       foreign_key_column: id
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: id
     type: integer
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -3593,7 +4729,7 @@ fields:
       width: full
     schema:
       name: id
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: int unsigned
       default_value: null
       max_length: null
@@ -3607,11 +4743,11 @@ fields:
       has_auto_increment: true
       foreign_key_table: null
       foreign_key_column: null
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: item
     type: string
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -3631,7 +4767,7 @@ fields:
       width: full
     schema:
       name: item
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: varchar
       default_value: null
       max_length: 255
@@ -3645,11 +4781,11 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: sort
     type: integer
     meta:
-      collection: gps_site_navigation_menu
+      collection: gps_site_main_navigation_menu_navigation_menu
       conditions: null
       display: null
       display_options: null
@@ -3669,7 +4805,7 @@ fields:
       width: full
     schema:
       name: sort
-      table: gps_site_navigation_menu
+      table: gps_site_main_navigation_menu_navigation_menu
       data_type: int
       default_value: null
       max_length: null
@@ -3699,7 +4835,7 @@ fields:
       options: null
       readonly: true
       required: false
-      sort: null
+      sort: 1
       special: null
       translations: null
       validation: null
@@ -3737,7 +4873,7 @@ fields:
       options: null
       readonly: false
       required: true
-      sort: null
+      sort: 2
       special: null
       translations:
         - language: fr-FR
@@ -3776,17 +4912,62 @@ fields:
       note: null
       options:
         crop: false
+        folder: 3b124a2c-6fa7-4772-972c-1191ab996137
       readonly: false
       required: false
-      sort: null
+      sort: 4
       special:
         - file
-      translations: null
+      translations:
+        - language: fr-FR
+          translation: Pictogramme
       validation: null
       validation_message: null
-      width: full
+      width: half
     schema:
       name: pictogramme
+      table: gps_thematiques
+      data_type: char
+      default_value: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: gps_thematiques
+    field: pictogramme_dark
+    type: uuid
+    meta:
+      collection: gps_thematiques
+      conditions: null
+      display: null
+      display_options: null
+      field: pictogramme_dark
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options:
+        folder: 3b124a2c-6fa7-4772-972c-1191ab996137
+      readonly: false
+      required: false
+      sort: 5
+      special:
+        - file
+      translations:
+        - language: fr-FR
+          translation: Pictogramme (mode sombre)
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: pictogramme_dark
       table: gps_thematiques
       data_type: char
       default_value: null
@@ -3817,7 +4998,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: null
+      sort: 3
       special: null
       translations:
         - language: fr-FR
@@ -4547,33 +5728,117 @@ relations:
       constraint_name: gps_pages_page_id_foreign
       on_update: RESTRICT
       on_delete: SET NULL
-  - collection: gps_site_navigation_menu
-    field: gps_site_id
-    related_collection: gps_site
+  - collection: gps_site_banner
+    field: site_logo
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: gps_site_banner
+      many_field: site_logo
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: gps_site_banner
+      column: site_logo
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: gps_site_banner_site_logo_foreign
+      on_update: RESTRICT
+      on_delete: NO ACTION
+  - collection: gps_site_banner
+    field: site_logo_dark
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: gps_site_banner
+      many_field: site_logo_dark
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: gps_site_banner
+      column: site_logo_dark
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: gps_site_banner_site_logo_dark_foreign
+      on_update: RESTRICT
+      on_delete: SET NULL
+  - collection: gps_site_footer
+    field: operator_img_src
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: gps_site_footer
+      many_field: operator_img_src
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: gps_site_footer
+      column: operator_img_src
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: gps_site_footer_operator_img_src_foreign
+      on_update: RESTRICT
+      on_delete: SET NULL
+  - collection: gps_site_footer
+    field: operator_img_src_dark
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: gps_site_footer
+      many_field: operator_img_src_dark
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: gps_site_footer
+      column: operator_img_src_dark
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: gps_site_footer_operator_img_src_dark_foreign
+      on_update: RESTRICT
+      on_delete: SET NULL
+  - collection: gps_site_main_navigation_menu_navigation_menu
+    field: gps_site_main_navigation_menu_id
+    related_collection: gps_site_main_navigation_menu
     meta:
       junction_field: item
-      many_collection: gps_site_navigation_menu
-      many_field: gps_site_id
+      many_collection: gps_site_main_navigation_menu_navigation_menu
+      many_field: gps_site_main_navigation_menu_id
       one_allowed_collections: null
-      one_collection: gps_site
+      one_collection: gps_site_main_navigation_menu
       one_collection_field: null
       one_deselect_action: nullify
       one_field: navigation_menu
       sort_field: sort
     schema:
-      table: gps_site_navigation_menu
-      column: gps_site_id
-      foreign_key_table: gps_site
+      table: gps_site_main_navigation_menu_navigation_menu
+      column: gps_site_main_navigation_menu_id
+      foreign_key_table: gps_site_main_navigation_menu
       foreign_key_column: id
-      constraint_name: gps_site_navigation_menu_gps_site_id_foreign
+      constraint_name: gps_site_main_navigation_menu_navigation_me__bd4d76b_foreign
       on_update: RESTRICT
       on_delete: SET NULL
-  - collection: gps_site_navigation_menu
+  - collection: gps_site_main_navigation_menu_navigation_menu
     field: item
     related_collection: null
     meta:
-      junction_field: gps_site_id
-      many_collection: gps_site_navigation_menu
+      junction_field: gps_site_main_navigation_menu_id
+      many_collection: gps_site_main_navigation_menu_navigation_menu
       many_field: item
       one_allowed_collections:
         - gps_pages
@@ -4602,6 +5867,27 @@ relations:
       foreign_key_table: directus_files
       foreign_key_column: id
       constraint_name: gps_thematiques_pictogramme_foreign
+      on_update: RESTRICT
+      on_delete: SET NULL
+  - collection: gps_thematiques
+    field: pictogramme_dark
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: gps_thematiques
+      many_field: pictogramme_dark
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: gps_thematiques
+      column: pictogramme_dark
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: gps_thematiques_pictogramme_dark_foreign
       on_update: RESTRICT
       on_delete: SET NULL
   - collection: gps_typesdispositif

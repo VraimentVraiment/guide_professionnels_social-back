@@ -7,4 +7,13 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 
-uploads
+uploads/*
+!uploads/8bc3bcf6-3a64-4c48-a53c-42a2aa8247bf.svg
+!uploads/dc860569-fd30-4827-87c0-e6e6e99635bf*.png
+!uploads/2326bc2d-02fc-4cd5-bae5-73e60b314601.svg
+!uploads/59ccd613-1e34-4fd0-9b72-300fcf60e171*.png
+
+config/secrets.*
+config/local.*
+config/production.*
+config/qualification.*
