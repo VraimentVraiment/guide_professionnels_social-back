@@ -1,0 +1,38 @@
+{% layout "base" %} {% block content %}
+
+<h1>Vous avez été invité à vous inscire au Guide des Professionnels du Social</h1>
+
+<p style="padding-bottom: 30px">
+  Vous avez été invité à rejoindre le Guide des Professionnels du Social.
+  Veuillez cliquer sur le bouton ci-dessous pour créer votre mot de passe et accéder à la plateforme :
+</p>
+
+<a
+  class="button"
+  rel="noopener"
+  target="_blank"
+  href="{{url}}"
+  style="
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 11px 24px;
+    border-radius: 8px;
+    background: #171717;
+    border: 1px solid #ffffff;
+  "
+>
+  <!--[if mso]>
+    <i style="letter-spacing: 25px; mso-font-width: -100%; mso-text-raise: 30pt"
+      >&nbsp;</i
+    >
+  <![endif]-->
+  <span style="mso-text-raise: 15pt">Rejoindre la boussole du travailleur social</span>
+  <!--[if mso]>
+    <i style="letter-spacing: 25px; mso-font-width: -100%">&nbsp;</i>
+  <![endif]-->
+</a>
+
+{% endblock %}
