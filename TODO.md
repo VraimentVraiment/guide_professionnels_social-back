@@ -3,13 +3,13 @@
 - Update readme :
   - set map center setting in directus api fields
 
-## Backend interface
+## User app
 
-- Render 'caracteristiques_dispositif' and 'types_dispositif' as tree in directus once feature is available (currently in discussion: [https://github.com/directus/directus/discussions/3054])
+- Use a tree layout for hierarchical collections ('caracteristiques_dispositif' and 'types_dispositif') once feature is available (currently in discussion: [https://github.com/directus/directus/discussions/3054])
 
 - Improve notification recipients selection methods (right now every user with app access gets notifications from the frontend)
 
-## Backend code
+## Code
 
 - Right now email templates are hardcoded to be translated in french (in /extensions/templates). Directus might implement email translation in the future (see [https://github.com/directus/directus/discussions/8239])
 

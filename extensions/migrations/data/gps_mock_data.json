@@ -1,155 +1,559 @@
 [
-{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
-{"type":"database","name":"ddets16"},
-{"type":"table","name":"gps_caracteristiquesdispositif","database":"ddets16","data":
-[
-{"combination":null,"id":"1","name":"Ex. de caractéristique sans enfant","parent_id":null,"sort":null},
-{"combination":"and","id":"2","name":"Ex. de caractéristique parent \"et\"","parent_id":null,"sort":null},
-{"combination":null,"id":"3","name":"Ex de caractéristique enfant de \"et\" 1","parent_id":"2","sort":null},
-{"combination":null,"id":"4","name":"Ex de caractéristique enfant de \"et\" 2","parent_id":"2","sort":null},
-{"combination":"or","id":"5","name":"Ex. de caractéristique parent \"ou\"","parent_id":null,"sort":null},
-{"combination":null,"id":"6","name":"Ex. de caractéristique enfant de \"ou\" 1","parent_id":"5","sort":null},
-{"combination":null,"id":"7","name":"Ex. de caractéristique enfant de \"ou\" 2","parent_id":"5","sort":null},
-{"combination":"unique","id":"8","name":"Ex. de caractéristique parent \"unique\"","parent_id":null,"sort":null},
-{"combination":null,"id":"9","name":"Ex. de caractéristique enfant de \"unique\" 1","parent_id":"8","sort":null},
-{"combination":null,"id":"10","name":"Ex. de caractéristique enfant de \"unique\" 2","parent_id":"8","sort":null},
-{"combination":null,"id":"11","name":"Ex. de caractéristique grand-parent","parent_id":null,"sort":null},
-{"combination":"and","id":"12","name":"Ex. de caractéristique enfant de grand-parent","parent_id":"11","sort":null},
-{"combination":null,"id":"13","name":"Ex. de caractéristique petit-enfant de grand-parent","parent_id":"12","sort":null}
-]
-}
-,{"type":"table","name":"gps_caracteristiquesdispositif_gps_thematiques","database":"ddets16","data":
-[
-{"gps_caracteristiquesdispositif_id":"1","gps_thematiques_id":"1","id":"1"},
-{"gps_caracteristiquesdispositif_id":"2","gps_thematiques_id":"1","id":"2"},
-{"gps_caracteristiquesdispositif_id":"3","gps_thematiques_id":"1","id":"3"},
-{"gps_caracteristiquesdispositif_id":"4","gps_thematiques_id":"1","id":"4"},
-{"gps_caracteristiquesdispositif_id":"5","gps_thematiques_id":"1","id":"5"},
-{"gps_caracteristiquesdispositif_id":"6","gps_thematiques_id":"1","id":"6"},
-{"gps_caracteristiquesdispositif_id":"9","gps_thematiques_id":"1","id":"7"},
-{"gps_caracteristiquesdispositif_id":"10","gps_thematiques_id":"1","id":"8"},
-{"gps_caracteristiquesdispositif_id":"8","gps_thematiques_id":"1","id":"9"},
-{"gps_caracteristiquesdispositif_id":"7","gps_thematiques_id":"1","id":"10"},
-{"gps_caracteristiquesdispositif_id":"13","gps_thematiques_id":"1","id":"11"},
-{"gps_caracteristiquesdispositif_id":"12","gps_thematiques_id":"1","id":"12"},
-{"gps_caracteristiquesdispositif_id":"11","gps_thematiques_id":"1","id":"13"}
-]
-}
-,{"type":"table","name":"gps_download_files","database":"ddets16","data":
-[
-
-]
-}
-,{"type":"table","name":"gps_fichesdispositif","database":"ddets16","data":
-[
-{"addresses":"[{\"address\":{\"text\":\"Caen\",\"value\":{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-0.372291,49.184571]},\"properties\":{\"label\":\"Caen\",\"score\":0.9602902331816218,\"id\":\"14118\",\"type\":\"municipality\",\"name\":\"Caen\",\"postcode\":\"14000\",\"citycode\":\"14118\",\"x\":454194.85,\"y\":6903564.28,\"population\":107250,\"city\":\"Caen\",\"context\":\"14, Calvados, Normandie\",\"importance\":0.52422,\"municipality\":\"Caen\",\"distance\":1357}}}}]","cadre_de_vie":null,"date_created":"2023-11-05 09:20:09","date_updated":null,"demande_dinformation":null,"demarche_a_suivre":null,"gps_typesdispositif_id":"1","id":"1","missions":null,"name":"Ex. de fiche dispositif 1","public_eligible":null,"sort":null,"status":"published"},
-{"addresses":"[{\"address\":{\"text\":\"12 Rue de l’Arquette 14000 Caen\",\"value\":{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-0.354975,49.174929]},\"properties\":{\"label\":\"12 Rue de l’Arquette 14000 Caen\",\"score\":0.7833552183224036,\"housenumber\":\"12\",\"id\":\"14118_0430_00012\",\"name\":\"12 Rue de l’Arquette\",\"postcode\":\"14000\",\"citycode\":\"14118\",\"x\":455410.7,\"y\":6902439.01,\"city\":\"Caen\",\"context\":\"14, Calvados, Normandie\",\"type\":\"housenumber\",\"importance\":0.75031,\"street\":\"Rue de l’Arquette\",\"distance\":344}}}}]","cadre_de_vie":null,"date_created":"2023-11-05 09:21:26","date_updated":"2023-11-05 09:37:02","demande_dinformation":null,"demarche_a_suivre":null,"gps_typesdispositif_id":"3","id":"2","missions":null,"name":"Ex. de fiche dispositif 2","public_eligible":null,"sort":null,"status":"published"},
-{"addresses":"[{\"address\":{\"text\":\"Rue Saint Jean 14400 Bayeux\",\"value\":{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-0.697151,49.275604]},\"properties\":{\"label\":\"Rue Saint Jean 14400 Bayeux\",\"score\":0.951566460447732,\"id\":\"14047_1060\",\"name\":\"Rue Saint Jean\",\"postcode\":\"14400\",\"citycode\":\"14047\",\"x\":431006.41,\"y\":6914739.18,\"city\":\"Bayeux\",\"context\":\"14, Calvados, Normandie\",\"type\":\"street\",\"importance\":0.67012,\"street\":\"Rue Saint Jean\",\"distance\":26900}}}}]","cadre_de_vie":null,"date_created":"2023-11-05 09:22:05","date_updated":"2023-11-05 09:37:54","demande_dinformation":null,"demarche_a_suivre":null,"gps_typesdispositif_id":"4","id":"3","missions":null,"name":"Ex. de fiche dispositif 3","public_eligible":null,"sort":null,"status":"published"}
-]
-}
-,{"type":"table","name":"gps_fichesdispositif_directus_files","database":"ddets16","data":
-[
-
-]
-}
-,{"type":"table","name":"gps_fichesdispositif_gps_caracteristiquesdispositif","database":"ddets16","data":
-[
-{"gps_caracteristiquesdispositif_id":"3","gps_fichesdispositif_id":"1","id":"1"},
-{"gps_caracteristiquesdispositif_id":"4","gps_fichesdispositif_id":"1","id":"2"},
-{"gps_caracteristiquesdispositif_id":"3","gps_fichesdispositif_id":"2","id":"3"},
-{"gps_caracteristiquesdispositif_id":"4","gps_fichesdispositif_id":"3","id":"4"},
-{"gps_caracteristiquesdispositif_id":"6","gps_fichesdispositif_id":"2","id":"5"},
-{"gps_caracteristiquesdispositif_id":"7","gps_fichesdispositif_id":"3","id":"6"}
-]
-}
-,{"type":"table","name":"gps_fichesdispositif_gps_download_files","database":"ddets16","data":
-[
-
-]
-}
-,{"type":"table","name":"gps_fichesdispositif_gps_thematiques","database":"ddets16","data":
-[
-{"gps_fichesdispositif_id":"1","gps_thematiques_id":"1","id":"1"},
-{"gps_fichesdispositif_id":"2","gps_thematiques_id":"1","id":"2"},
-{"gps_fichesdispositif_id":"3","gps_thematiques_id":"1","id":"3"}
-]
-}
-,{"type":"table","name":"gps_fichestechniques","database":"ddets16","data":
-[
-{"date_created":"2023-11-05 09:25:57","date_updated":null,"id":"1","media":null,"name":"Ex. de fiche technique","sort":null,"status":"published"}
-]
-}
-,{"type":"table","name":"gps_fichestechniques_directus_files","database":"ddets16","data":
-[
-
-]
-}
-,{"type":"table","name":"gps_fichestechniques_gps_thematiques","database":"ddets16","data":
-[
-{"gps_fichestechniques_id":"1","gps_thematiques_id":"1","id":"1"}
-]
-}
-,{"type":"table","name":"gps_pages","database":"ddets16","data":
-[
-{"content":"<p>Cette page sera accessible &agrave; tous les visiteurs du site (statut \"publi&eacute;-public\")<\/p>","id":"1","metadescription":null,"metatitle":null,"page_id":"1","slug":"page-publique","sort":null,"status":"published-public","title":"Ex. de page publique"},
-{"content":"<p>Cette page ne sera accessible qu'aux utilisateurs priv&eacute;s (statut \"publi&eacute;-priv&eacute;\")<\/p>","id":"2","metadescription":null,"metatitle":null,"page_id":"1","slug":"page-privee","sort":null,"status":"published-private","title":"Ex. de page privée"},
-{"content":null,"id":"3","metadescription":null,"metatitle":null,"page_id":null,"slug":"accessibilite","sort":null,"status":"published-public","title":"Déclaration d'accessibilité"},
-{"content":null,"id":"4","metadescription":null,"metatitle":null,"page_id":null,"slug":"cookies","sort":null,"status":"published-public","title":"Gestion des cookies"},
-{"content":null,"id":"5","metadescription":null,"metatitle":null,"page_id":null,"slug":"donnees-personnelles","sort":null,"status":"published-public","title":"Données personnelles et sécurité"},
-{"content":null,"id":"6","metadescription":null,"metatitle":null,"page_id":null,"slug":"mentions-legales","sort":null,"status":"published-private","title":"Mentions légales"}
-]
-}
-,{"type":"table","name":"gps_pages_groups","database":"ddets16","data":
-[
-{"id":"1","name":"Ex. de groupe"}
-]
-}
-,{"type":"table","name":"gps_site_banner","database":"ddets16","data":
-[
-{"id":"1","service_description":"dans <la collectivité>","service_title":"Guide des\nProfessionnels du\nSocial","site_logo":"8bc3bcf6-3a64-4c48-a53c-42a2aa8247bf","site_logo_dark":"2326bc2d-02fc-4cd5-bae5-73e60b314601"}
-]
-}
-,{"type":"table","name":"gps_site_footer","database":"ddets16","data":
-[
-{"a11y_compliance":"Partiellement conforme","desc_text":"Le Guide des Professionnels du Social dans le département du Calvados est une plateforme portée par la préfecture du Calvados. Ce projet est lauréat de l'Appel à défis pour une action publique co-construite avec les usagers et les agents, porté par la Direction interministérielle de la fonction publique (DITP) et financé dans le cadre de France Relance. Le design de ce site est conçu avec le système de design de l’État.","id":"1","licence_name":"etalab-2.0","licence_text":"Sauf mention contraire, tous les contenus de ce site sont sous licence","licence_to":"https:\/\/github.com\/etalab\/licence-ouverte\/blob\/master\/LO.md","logo_text":"Nom de\nl'opérateur","operator_img_alt":null,"operator_img_src":null,"operator_img_src_dark":null,"operator_link_text":null,"operator_to":null}
-]
-}
-,{"type":"table","name":"gps_site_header","database":"ddets16","data":
-[
-{"id":"1","logo_text":"Nom de\nl'opérateur","service_description":"dans <la collectivité>","service_title":"Guide des professionnels du social"}
-]
-}
-,{"type":"table","name":"gps_site_main_navigation_menu","database":"ddets16","data":
-[
-{"id":"1"}
-]
-}
-,{"type":"table","name":"gps_site_main_navigation_menu_navigation_menu","database":"ddets16","data":
-[
-{"collection":"gps_pages","gps_site_main_navigation_menu_id":"1","id":"1","item":"1","sort":"1"},
-{"collection":"gps_pages","gps_site_main_navigation_menu_id":"1","id":"2","item":"2","sort":"2"},
-{"collection":"gps_pages_groups","gps_site_main_navigation_menu_id":"1","id":"3","item":"1","sort":"3"}
-]
-}
-,{"type":"table","name":"gps_thematiques","database":"ddets16","data":
-[
-{"id":"1","name":"Ex. de thématique","pictogramme":null,"pictogramme_dark":null,"sort":null}
-]
-}
-,{"type":"table","name":"gps_typesdispositif","database":"ddets16","data":
-[
-{"id":"1","name":"Ex. de type de dispositif sans enfant","parent_id":null,"sort":null},
-{"id":"2","name":"Ex. de type de dispositif avec enfant","parent_id":null,"sort":null},
-{"id":"3","name":"Ex. de type de dispositif enfant 1","parent_id":"2","sort":null},
-{"id":"4","name":"Ex. de type de dispositif enfant 2","parent_id":"2","sort":null}
-]
-}
-,{"type":"table","name":"gps_typesdispositif_gps_thematiques","database":"ddets16","data":
-[
-{"gps_thematiques_id":"1","gps_typesdispositif_id":"1","id":"1"},
-{"gps_thematiques_id":"1","gps_typesdispositif_id":"3","id":"2"},
-{"gps_thematiques_id":"1","gps_typesdispositif_id":"4","id":"3"},
-{"gps_thematiques_id":"1","gps_typesdispositif_id":"2","id":"4"}
-]
-}
+  {
+    "type": "header",
+    "version": "5.2.0",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+  },
+  {
+    "type": "database",
+    "name": "ddets16"
+  },
+  {
+    "type": "table",
+    "name": "gps_caracteristiquesdispositif",
+    "database": "ddets16",
+    "data": [
+      {
+        "combination": null,
+        "id": "1",
+        "name": "Ex. de caractéristique sans enfant",
+        "parent_id": null,
+        "sort": null
+      },
+      {
+        "combination": "and",
+        "id": "2",
+        "name": "Ex. de caractéristique parent \"et\"",
+        "parent_id": null,
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "3",
+        "name": "Ex de caractéristique enfant de \"et\" 1",
+        "parent_id": "2",
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "4",
+        "name": "Ex de caractéristique enfant de \"et\" 2",
+        "parent_id": "2",
+        "sort": null
+      },
+      {
+        "combination": "or",
+        "id": "5",
+        "name": "Ex. de caractéristique parent \"ou\"",
+        "parent_id": null,
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "6",
+        "name": "Ex. de caractéristique enfant de \"ou\" 1",
+        "parent_id": "5",
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "7",
+        "name": "Ex. de caractéristique enfant de \"ou\" 2",
+        "parent_id": "5",
+        "sort": null
+      },
+      {
+        "combination": "unique",
+        "id": "8",
+        "name": "Ex. de caractéristique parent \"unique\"",
+        "parent_id": null,
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "9",
+        "name": "Ex. de caractéristique enfant de \"unique\" 1",
+        "parent_id": "8",
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "10",
+        "name": "Ex. de caractéristique enfant de \"unique\" 2",
+        "parent_id": "8",
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "11",
+        "name": "Ex. de caractéristique grand-parent",
+        "parent_id": null,
+        "sort": null
+      },
+      {
+        "combination": "and",
+        "id": "12",
+        "name": "Ex. de caractéristique enfant de grand-parent",
+        "parent_id": "11",
+        "sort": null
+      },
+      {
+        "combination": null,
+        "id": "13",
+        "name": "Ex. de caractéristique petit-enfant de grand-parent",
+        "parent_id": "12",
+        "sort": null
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_caracteristiquesdispositif_gps_thematiques",
+    "database": "ddets16",
+    "data": [
+      {
+        "gps_caracteristiquesdispositif_id": "1",
+        "gps_thematiques_id": "1",
+        "id": "1"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "2",
+        "gps_thematiques_id": "1",
+        "id": "2"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "3",
+        "gps_thematiques_id": "1",
+        "id": "3"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "4",
+        "gps_thematiques_id": "1",
+        "id": "4"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "5",
+        "gps_thematiques_id": "1",
+        "id": "5"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "6",
+        "gps_thematiques_id": "1",
+        "id": "6"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "9",
+        "gps_thematiques_id": "1",
+        "id": "7"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "10",
+        "gps_thematiques_id": "1",
+        "id": "8"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "8",
+        "gps_thematiques_id": "1",
+        "id": "9"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "7",
+        "gps_thematiques_id": "1",
+        "id": "10"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "13",
+        "gps_thematiques_id": "1",
+        "id": "11"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "12",
+        "gps_thematiques_id": "1",
+        "id": "12"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "11",
+        "gps_thematiques_id": "1",
+        "id": "13"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_download_files",
+    "database": "ddets16",
+    "data": []
+  },
+  {
+    "type": "table",
+    "name": "gps_fichesdispositif",
+    "database": "ddets16",
+    "data": [
+      {
+        "addresses": "[{\"address\":{\"text\":\"Caen\",\"value\":{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-0.372291,49.184571]},\"properties\":{\"label\":\"Caen\",\"score\":0.9602902331816218,\"id\":\"14118\",\"type\":\"municipality\",\"name\":\"Caen\",\"postcode\":\"14000\",\"citycode\":\"14118\",\"x\":454194.85,\"y\":6903564.28,\"population\":107250,\"city\":\"Caen\",\"context\":\"14, Calvados, Normandie\",\"importance\":0.52422,\"municipality\":\"Caen\",\"distance\":1357}}}}]",
+        "cadre_de_vie": null,
+        "date_created": "2023-11-05 09:20:09",
+        "date_updated": null,
+        "demande_dinformation": null,
+        "demarche_a_suivre": null,
+        "gps_typesdispositif_id": "1",
+        "id": "1",
+        "missions": null,
+        "name": "Ex. de fiche dispositif 1",
+        "public_eligible": null,
+        "sort": null,
+        "status": "published"
+      },
+      {
+        "addresses": "[{\"address\":{\"text\":\"12 Rue de l’Arquette 14000 Caen\",\"value\":{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-0.354975,49.174929]},\"properties\":{\"label\":\"12 Rue de l’Arquette 14000 Caen\",\"score\":0.7833552183224036,\"housenumber\":\"12\",\"id\":\"14118_0430_00012\",\"name\":\"12 Rue de l’Arquette\",\"postcode\":\"14000\",\"citycode\":\"14118\",\"x\":455410.7,\"y\":6902439.01,\"city\":\"Caen\",\"context\":\"14, Calvados, Normandie\",\"type\":\"housenumber\",\"importance\":0.75031,\"street\":\"Rue de l’Arquette\",\"distance\":344}}}}]",
+        "cadre_de_vie": null,
+        "date_created": "2023-11-05 09:21:26",
+        "date_updated": "2023-11-05 09:37:02",
+        "demande_dinformation": null,
+        "demarche_a_suivre": null,
+        "gps_typesdispositif_id": "3",
+        "id": "2",
+        "missions": null,
+        "name": "Ex. de fiche dispositif 2",
+        "public_eligible": null,
+        "sort": null,
+        "status": "published"
+      },
+      {
+        "addresses": "[{\"address\":{\"text\":\"Rue Saint Jean 14400 Bayeux\",\"value\":{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-0.697151,49.275604]},\"properties\":{\"label\":\"Rue Saint Jean 14400 Bayeux\",\"score\":0.951566460447732,\"id\":\"14047_1060\",\"name\":\"Rue Saint Jean\",\"postcode\":\"14400\",\"citycode\":\"14047\",\"x\":431006.41,\"y\":6914739.18,\"city\":\"Bayeux\",\"context\":\"14, Calvados, Normandie\",\"type\":\"street\",\"importance\":0.67012,\"street\":\"Rue Saint Jean\",\"distance\":26900}}}}]",
+        "cadre_de_vie": null,
+        "date_created": "2023-11-05 09:22:05",
+        "date_updated": "2023-11-05 09:37:54",
+        "demande_dinformation": null,
+        "demarche_a_suivre": null,
+        "gps_typesdispositif_id": "4",
+        "id": "3",
+        "missions": null,
+        "name": "Ex. de fiche dispositif 3",
+        "public_eligible": null,
+        "sort": null,
+        "status": "published"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_fichesdispositif_directus_files",
+    "database": "ddets16",
+    "data": []
+  },
+  {
+    "type": "table",
+    "name": "gps_fichesdispositif_gps_caracteristiquesdispositif",
+    "database": "ddets16",
+    "data": [
+      {
+        "gps_caracteristiquesdispositif_id": "3",
+        "gps_fichesdispositif_id": "1",
+        "id": "1"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "4",
+        "gps_fichesdispositif_id": "1",
+        "id": "2"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "3",
+        "gps_fichesdispositif_id": "2",
+        "id": "3"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "4",
+        "gps_fichesdispositif_id": "3",
+        "id": "4"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "6",
+        "gps_fichesdispositif_id": "2",
+        "id": "5"
+      },
+      {
+        "gps_caracteristiquesdispositif_id": "7",
+        "gps_fichesdispositif_id": "3",
+        "id": "6"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_fichesdispositif_gps_download_files",
+    "database": "ddets16",
+    "data": []
+  },
+  {
+    "type": "table",
+    "name": "gps_fichesdispositif_gps_thematiques",
+    "database": "ddets16",
+    "data": [
+      {
+        "gps_fichesdispositif_id": "1",
+        "gps_thematiques_id": "1",
+        "id": "1"
+      },
+      {
+        "gps_fichesdispositif_id": "2",
+        "gps_thematiques_id": "1",
+        "id": "2"
+      },
+      {
+        "gps_fichesdispositif_id": "3",
+        "gps_thematiques_id": "1",
+        "id": "3"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_fichestechniques",
+    "database": "ddets16",
+    "data": [
+      {
+        "date_created": "2023-11-05 09:25:57",
+        "date_updated": null,
+        "id": "1",
+        "media": null,
+        "name": "Ex. de fiche technique",
+        "sort": null,
+        "status": "published"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_fichestechniques_directus_files",
+    "database": "ddets16",
+    "data": []
+  },
+  {
+    "type": "table",
+    "name": "gps_fichestechniques_gps_thematiques",
+    "database": "ddets16",
+    "data": [
+      {
+        "gps_fichestechniques_id": "1",
+        "gps_thematiques_id": "1",
+        "id": "1"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_pages",
+    "database": "ddets16",
+    "data": [
+      {
+        "content": "<p>Cette page sera accessible &agrave; tous les visiteurs du site (statut \"publi&eacute;-public\")<\/p>",
+        "id": "1",
+        "metadescription": null,
+        "metatitle": null,
+        "page_id": "1",
+        "slug": "page-publique",
+        "sort": null,
+        "status": "published-public",
+        "title": "Ex. de page publique"
+      },
+      {
+        "content": "<p>Cette page ne sera accessible qu'aux utilisateurs priv&eacute;s (statut \"publi&eacute;-priv&eacute;\")<\/p>",
+        "id": "2",
+        "metadescription": null,
+        "metatitle": null,
+        "page_id": "1",
+        "slug": "page-privee",
+        "sort": null,
+        "status": "published-private",
+        "title": "Ex. de page privée"
+      },
+      {
+        "content": null,
+        "id": "3",
+        "metadescription": null,
+        "metatitle": null,
+        "page_id": null,
+        "slug": "accessibilite",
+        "sort": null,
+        "status": "published-public",
+        "title": "Déclaration d'accessibilité"
+      },
+      {
+        "content": null,
+        "id": "4",
+        "metadescription": null,
+        "metatitle": null,
+        "page_id": null,
+        "slug": "cookies",
+        "sort": null,
+        "status": "published-public",
+        "title": "Gestion des cookies"
+      },
+      {
+        "content": null,
+        "id": "5",
+        "metadescription": null,
+        "metatitle": null,
+        "page_id": null,
+        "slug": "donnees-personnelles",
+        "sort": null,
+        "status": "published-public",
+        "title": "Données personnelles et sécurité"
+      },
+      {
+        "content": null,
+        "id": "6",
+        "metadescription": null,
+        "metatitle": null,
+        "page_id": null,
+        "slug": "mentions-legales",
+        "sort": null,
+        "status": "published-private",
+        "title": "Mentions légales"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_pages_groups",
+    "database": "ddets16",
+    "data": [
+      {
+        "id": "1",
+        "name": "Ex. de groupe"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_site_footer",
+    "database": "ddets16",
+    "data": [
+      {
+        "a11y_compliance": "Partiellement conforme",
+        "desc_text": "Le Guide des Professionnels du Social dans le département du Calvados est une plateforme portée par la préfecture du Calvados. Ce projet est lauréat de l'Appel à défis pour une action publique co-construite avec les usagers et les agents, porté par la Direction interministérielle de la fonction publique (DITP) et financé dans le cadre de France Relance. Le design de ce site est conçu avec le système de design de l’État.",
+        "id": "1",
+        "licence_name": "etalab-2.0",
+        "licence_text": "Sauf mention contraire, tous les contenus de ce site sont sous licence",
+        "licence_to": "https:\/\/github.com\/etalab\/licence-ouverte\/blob\/master\/LO.md",
+        "logo_text": "Nom de\nl'opérateur",
+        "operator_img_alt": null,
+        "operator_img_src": null,
+        "operator_img_src_dark": null,
+        "operator_link_text": null,
+        "operator_to": null
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_site_main_navigation_menu",
+    "database": "ddets16",
+    "data": [
+      {
+        "id": "1"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_site_main_navigation_menu_navigation_menu",
+    "database": "ddets16",
+    "data": [
+      {
+        "collection": "gps_pages",
+        "gps_site_main_navigation_menu_id": "1",
+        "id": "1",
+        "item": "1",
+        "sort": "1"
+      },
+      {
+        "collection": "gps_pages",
+        "gps_site_main_navigation_menu_id": "1",
+        "id": "2",
+        "item": "2",
+        "sort": "2"
+      },
+      {
+        "collection": "gps_pages_groups",
+        "gps_site_main_navigation_menu_id": "1",
+        "id": "3",
+        "item": "1",
+        "sort": "3"
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_thematiques",
+    "database": "ddets16",
+    "data": [
+      {
+        "id": "1",
+        "name": "Ex. de thématique",
+        "pictogramme": null,
+        "pictogramme_dark": null,
+        "sort": null
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_typesdispositif",
+    "database": "ddets16",
+    "data": [
+      {
+        "id": "1",
+        "name": "Ex. de type de dispositif sans enfant",
+        "parent_id": null,
+        "sort": null
+      },
+      {
+        "id": "2",
+        "name": "Ex. de type de dispositif avec enfant",
+        "parent_id": null,
+        "sort": null
+      },
+      {
+        "id": "3",
+        "name": "Ex. de type de dispositif enfant 1",
+        "parent_id": "2",
+        "sort": null
+      },
+      {
+        "id": "4",
+        "name": "Ex. de type de dispositif enfant 2",
+        "parent_id": "2",
+        "sort": null
+      }
+    ]
+  },
+  {
+    "type": "table",
+    "name": "gps_typesdispositif_gps_thematiques",
+    "database": "ddets16",
+    "data": [
+      {
+        "gps_thematiques_id": "1",
+        "gps_typesdispositif_id": "1",
+        "id": "1"
+      },
+      {
+        "gps_thematiques_id": "1",
+        "gps_typesdispositif_id": "3",
+        "id": "2"
+      },
+      {
+        "gps_thematiques_id": "1",
+        "gps_typesdispositif_id": "4",
+        "id": "3"
+      },
+      {
+        "gps_thematiques_id": "1",
+        "gps_typesdispositif_id": "2",
+        "id": "4"
+      }
+    ]
+  }
 ]

@@ -16,7 +16,7 @@
     "snapshots:clear": "rm -rf ./snapshots/*"
   },
   "dependencies": {
-    "directus": "^10.7.2",
+    "directus": "^10.8.2",
     "uuid": "^9.0.1"
   }
 }
