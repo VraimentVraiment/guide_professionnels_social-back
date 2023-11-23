@@ -2,29 +2,36 @@ import fs from 'fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import defaultConfig from "./default.mjs";
-import secrets from "./secrets.mjs";
+const CONFIG_FILENAMES = [
+  "default.mjs",
+  "secrets.mjs",
+  "local.mjs",
+  "qualification.mjs",
+  "production.mjs",
+];
 
-const { INITIAL_ADMIN_PASSWORD, ...secretConfig } = secrets;
+export default async env => await mergeConfigs(CONFIG_FILENAMES, env);
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+async function mergeConfigs(configFilenames) {
 
-const config = {
-  ...defaultConfig,
-  ...secretConfig,
-  ...(
-    fs.existsSync(resolve(__dirname, "production.mjs"))
-      ? (await import("./production.mjs")).default
-      : fs.existsSync(resolve(__dirname, "qualification.mjs"))
-        ? (await import("./qualification.mjs")).default
-        : fs.existsSync(resolve(__dirname, "local.mjs"))
-          ? (await import("./local.mjs")).default
-          : {}
-  ),
-};
+  const __dirname = dirname(fileURLToPath(import.meta.url));
 
-if (INITIAL_ADMIN_PASSWORD) {
-  config.ADMIN_PASSWORD = INITIAL_ADMIN_PASSWORD;
+  let config = {}
+
+  for (const configFilename of configFilenames) {
+    const configPath = resolve(__dirname, configFilename);
+    if (fs.existsSync(configPath)) {
+      config = {
+        ...config,
+        ...(await import(configPath)).default,
+      };
+    }
+  }
+  
+  if (config.INITIAL_ADMIN_PASSWORD) {
+    config.ADMIN_PASSWORD = config.INITIAL_ADMIN_PASSWORD;
+    delete config.INITIAL_ADMIN_PASSWORD;
+  }
+
+  return config;
 }
-
-export default config
