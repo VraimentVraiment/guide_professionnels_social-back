@@ -17,3 +17,6 @@ config/secrets.*
 config/local.*
 config/production.*
 config/qualification.*
+
+uploads
+temp_uploads
